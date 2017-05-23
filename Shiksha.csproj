@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CADE00B4-DCD6-407E-B2B8-B3BFE5C3D759}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shiksha</RootNamespace>
+    <AssemblyName>Shiksha</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddStudent.aspx.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddStudent.aspx.designer.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddTeacher.aspx.cs">
+      <DependentUpon>AddTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTeacher.aspx.designer.cs">
+      <DependentUpon>AddTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assignment.aspx.cs">
+      <DependentUpon>Assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assignment.aspx.designer.cs">
+      <DependentUpon>Assignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="code\Email.cs" />
+    <Compile Include="code\returnbrsem.cs" />
+    <Compile Include="code\validate.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forum_Login.aspx.cs">
+      <DependentUpon>Forum_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forum_Login.aspx.designer.cs">
+      <DependentUpon>Forum_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lectures.aspx.cs">
+      <DependentUpon>Lectures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lectures.aspx.designer.cs">
+      <DependentUpon>Lectures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PreviousResult.aspx.cs">
+      <DependentUpon>PreviousResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreviousResult.aspx.designer.cs">
+      <DependentUpon>PreviousResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreviousYear.aspx.cs">
+      <DependentUpon>PreviousYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreviousYear.aspx.designer.cs">
+      <DependentUpon>PreviousYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries.aspx.cs">
+      <DependentUpon>Queries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Queries.aspx.designer.cs">
+      <DependentUpon>Queries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quiz.aspx.cs">
+      <DependentUpon>Quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quiz.aspx.designer.cs">
+      <DependentUpon>Quiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuizUpload.aspx.cs">
+      <DependentUpon>QuizUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizUpload.aspx.designer.cs">
+      <DependentUpon>QuizUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Result.aspx.cs">
+      <DependentUpon>Result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Result.aspx.designer.cs">
+      <DependentUpon>Result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shiksha_Forum.aspx.cs">
+      <DependentUpon>Shiksha_Forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shiksha_Forum.aspx.designer.cs">
+      <DependentUpon>Shiksha_Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpStudent.aspx.cs">
+      <DependentUpon>SignUpStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUpStudent.aspx.designer.cs">
+      <DependentUpon>SignUpStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpTeacher.aspx.cs">
+      <DependentUpon>SignUpTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUpTeacher.aspx.designer.cs">
+      <DependentUpon>SignUpTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student.aspx.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student.aspx.designer.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentLogin.aspx.cs">
+      <DependentUpon>StudentLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentLogin.aspx.designer.cs">
+      <DependentUpon>StudentLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMaterial.aspx.cs">
+      <DependentUpon>StudentMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentMaterial.aspx.designer.cs">
+      <DependentUpon>StudentMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.designer.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Subject_Quiz.aspx.cs">
+      <DependentUpon>Subject_Quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Subject_Quiz.aspx.designer.cs">
+      <DependentUpon>Subject_Quiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.aspx.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher.aspx.designer.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherLogin.aspx.cs">
+      <DependentUpon>TeacherLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherLogin.aspx.designer.cs">
+      <DependentUpon>TeacherLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorials.aspx.cs">
+      <DependentUpon>Tutorials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutorials.aspx.designer.cs">
+      <DependentUpon>Tutorials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateLatest.aspx.cs">
+      <DependentUpon>UpdateLatest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateLatest.aspx.designer.cs">
+      <DependentUpon>UpdateLatest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadMaterial.aspx.cs">
+      <DependentUpon>UploadMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadMaterial.aspx.designer.cs">
+      <DependentUpon>UploadMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetail.aspx.cs">
+      <DependentUpon>ViewDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDetail.aspx.designer.cs">
+      <DependentUpon>ViewDetail.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddStudent.aspx" />
+    <Content Include="AddTeacher.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="Assignment.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Forum_Login.aspx" />
+    <Content Include="images\about\about-img1.jpg" />
+    <Content Include="images\about\about-services-bg.jpg" />
+    <Content Include="images\appointment-booking-img1.png" />
+    <Content Include="images\avatar-1.png" />
+    <Content Include="images\banners\banner-img1.jpg" />
+    <Content Include="images\banners\banner-img2.jpg" />
+    <Content Include="images\banners\banner-img3.jpg" />
+    <Content Include="images\banners\banner-img4.jpg" />
+    <Content Include="images\banners\banner-img5.jpg" />
+    <Content Include="images\banners\banner-img6.jpg" />
+    <Content Include="images\banners\banner-img7.jpg" />
+    <Content Include="images\contact\contact-info-box-img1.png" />
+    <Content Include="images\doctors\doctor-bio-img1.jpg" />
+    <Content Include="images\doctors\doctor-bio-img10.jpg" />
+    <Content Include="images\doctors\doctor-bio-img11.jpg" />
+    <Content Include="images\doctors\doctor-bio-img12.jpg" />
+    <Content Include="images\doctors\doctor-bio-img13.jpg" />
+    <Content Include="images\doctors\doctor-bio-img14.jpg" />
+    <Content Include="images\doctors\doctor-bio-img15.jpg" />
+    <Content Include="images\doctors\doctor-bio-img16.jpg" />
+    <Content Include="images\doctors\doctor-bio-img17.jpg" />
+    <Content Include="images\doctors\doctor-bio-img2.jpg" />
+    <Content Include="images\doctors\doctor-bio-img3.jpg" />
+    <Content Include="images\doctors\doctor-bio-img4.jpg" />
+    <Content Include="images\doctors\doctor-bio-img5.jpg" />
+    <Content Include="images\doctors\doctor-bio-img6.jpg" />
+    <Content Include="images\doctors\doctor-bio-img7.jpg" />
+    <Content Include="images\doctors\doctor-bio-img8.jpg" />
+    <Content Include="images\doctors\doctor-bio-img9.jpg" />
+    <Content Include="images\fav-114.html" />
+    <Content Include="images\fav-144.html" />
+    <Content Include="images\fav-57.html" />
+    <Content Include="images\fav-72.html" />
+    <Content Include="images\fav.html" />
+    <Content Include="images\gallery\big\gallery-big-img1.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img2.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img3.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img4.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img5.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img6.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img7.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img8.jpg" />
+    <Content Include="images\gallery\big\gallery-big-img9.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img1.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img2.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img3.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img4.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img5.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img6.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img7.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img8.jpg" />
+    <Content Include="images\gallery\thumb\gallery-thumb-img9.jpg" />
+    <Content Include="images\icons\ambulance.png" />
+    <Content Include="images\icons\band-aid.png" />
+    <Content Include="images\icons\nurse.png" />
+    <Content Include="images\icons\saline-bottle.png" />
+    <Content Include="images\icons\stethoscope.png" />
+    <Content Include="images\icons\tooth.png" />
+    <Content Include="images\image1.jpg" />
+    <Content Include="images\image2.jpg" />
+    <Content Include="images\image3.jpg" />
+    <Content Include="images\image4.jpg" />
+    <Content Include="images\news\news-post-img1.jpg" />
+    <Content Include="images\news\news-post-img2.jpg" />
+    <Content Include="images\news\news-post-img3.jpg" />
+    <Content Include="images\news\news-thumb-img1.jpg" />
+    <Content Include="images\news\news-thumb-img2.jpg" />
+    <Content Include="images\news\news-thumb-img3.jpg" />
+    <Content Include="images\news\news-thumb-img4.jpg" />
+    <Content Include="images\news\news-thumb-img5.jpg" />
+    <Content Include="images\news\news-thumb-img6.jpg" />
+    <Content Include="images\slider\slider-img1.jpg" />
+    <Content Include="images\slider\slider-img2.jpg" />
+    <Content Include="images\slider\slider-img3.jpg" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.png" />
+    <Content Include="img\6.png" />
+    <Content Include="img\ad.jpg" />
+    <Content Include="img\ad.png" />
+    <Content Include="img\asg.jpg" />
+    <Content Include="img\assignment.jpg" />
+    <Content Include="img\b2.jpg" />
+    <Content Include="img\b3.jpg" />
+    <Content Include="img\banner-img1.jpg" />
+    <Content Include="img\banner-img5.jpg" />
+    <Content Include="img\changepass.jpg" />
+    <Content Include="img\details.jpg" />
+    <Content Include="img\editprofile.jpg" />
+    <Content Include="img\material.jpg" />
+    <Content Include="img\pp.jpg" />
+    <Content Include="img\previos.jpg" />
+    <Content Include="img\q1.jpg" />
+    <Content Include="img\query.jpg" />
+    <Content Include="img\quiz.jpg" />
+    <Content Include="img\result.jpg" />
+    <Content Include="img\Results.jpg" />
+    <Content Include="img\sr.jpg" />
+    <Content Include="img\sreg.gif" />
+    <Content Include="img\SRMS_Logo.jpg" />
+    <Content Include="img\treg.jpg" />
+    <Content Include="img\tutorial.jpg" />
+    <Content Include="img\ul.jpg" />
+    <Content Include="img\um.jpg" />
+    <Content Include="img\uploadass.png" />
+    <Content Include="img\uploadquiz.jpg" />
+    <Content Include="img\ut.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="js\plugins\camera\css\camera.css" />
+    <Content Include="js\plugins\camera\images\blank.gif" />
+    <Content Include="js\plugins\camera\images\camera-loader.gif" />
+    <Content Include="js\plugins\camera\images\camera_skins.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay1.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay10.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay2.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay3.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay4.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay5.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay6.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay7.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay8.png" />
+    <Content Include="js\plugins\camera\images\patterns\overlay9.png" />
+    <Content Include="js\plugins\camera\js\camera.min.js" />
+    <Content Include="js\plugins\camera\js\jquery.easing.1.3.js" />
+    <Content Include="js\plugins\camera\js\jquery.mobile.customized.min.js" />
+    <Content Include="js\plugins\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="js\plugins\magnific-popup\magnific-popup.css" />
+    <Content Include="js\plugins\shuffle\jquery.shuffle.modernizr.min.js" />
+    <Content Include="Lectures.aspx" />
+    <Content Include="obj\Debug\ILP.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\m learning wcet.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\m learning wcet.dll" />
+    <Content Include="obj\Debug\m learning wcet.pdb" />
+    <Content Include="PreviousResult.aspx" />
+    <Content Include="PreviousYear.aspx" />
+    <Content Include="Queries.aspx" />
+    <Content Include="Quiz.aspx" />
+    <Content Include="QuizUpload.aspx" />
+    <Content Include="Result.aspx" />
+    <Content Include="Shiksha\CS\4\Lectures\Lectures1.mp4" />
+    <Content Include="Shiksha\CS\7\Lectures\Lectures1.mp4" />
+    <Content Include="Shiksha\IT\1\Lectures\Lectures1.mp4" />
+    <Content Include="Shiksha_Forum.aspx" />
+    <Content Include="SignUpStudent.aspx" />
+    <Content Include="SignUpTeacher.aspx" />
+    <Content Include="Student.aspx" />
+    <Content Include="StudentLogin.aspx" />
+    <Content Include="StudentMaterial.aspx" />
+    <Content Include="StudentProfile.aspx" />
+    <Content Include="Subject_Quiz.aspx" />
+    <Content Include="Teacher.aspx" />
+    <Content Include="TeacherLogin.aspx" />
+    <Content Include="Tutorials.aspx" />
+    <Content Include="UpdateLatest.aspx" />
+    <Content Include="UploadMaterial.aspx" />
+    <Content Include="ViewDetail.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="desktop.ini" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="images\about\Thumbs.db" />
+    <Content Include="images\banners\Thumbs.db" />
+    <Content Include="images\contact\Thumbs.db" />
+    <Content Include="images\doctors\Thumbs.db" />
+    <Content Include="images\icons\Thumbs.db" />
+    <Content Include="images\news\Thumbs.db" />
+    <Content Include="images\slider\Thumbs.db" />
+    <Content Include="img\Thumbs.db" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ILP.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\m learning wcet.csprojResolveAssemblyReference.cache" />
+    <Content Include="Shiksha\CS\1\Assignments\rsa-example.pdf" />
+    <Content Include="Shiksha\CS\2\Assignments\Assignment1.pdf" />
+    <Content Include="Shiksha\CS\2\Assignments\Assignment2.pdf" />
+    <Content Include="Shiksha\CS\2\Tutorials\Tutorials1.pdf" />
+    <Content Include="Shiksha\CS\3\PreviousYearQuestion\PYQ1.pdf" />
+    <Content Include="Shiksha\CS\4\Assignments\Assignment1.pdf" />
+    <Content Include="Shiksha\CS\4\PreviousYearQuestion\PYQ1.pdf" />
+    <Content Include="Shiksha\CS\4\Tutorials\Tutorials1.pdf" />
+    <Content Include="Shiksha\CS\7\Assignments\Assignment1.pdf" />
+    <Content Include="Shiksha\CS\7\PreviousYearQuestion\PYQ1.pdf" />
+    <Content Include="Shiksha\CS\7\Tutorials\Tutorials1.pdf" />
+    <Content Include="Shiksha\EC\2\Assignments\Assignment1.pdf" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="aspnet_client\system_web\2_0_50727\" />
+    <Folder Include="aspnet_client\system_web\4_0_30319\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Shiksha\CS\1\Lectures\" />
+    <Folder Include="Shiksha\CS\1\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\CS\1\Tutorials\" />
+    <Folder Include="Shiksha\CS\2\Lectures\" />
+    <Folder Include="Shiksha\CS\2\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\CS\3\Assignments\" />
+    <Folder Include="Shiksha\CS\3\Lectures\" />
+    <Folder Include="Shiksha\CS\3\Tutorials\" />
+    <Folder Include="Shiksha\CS\5\Assignments\" />
+    <Folder Include="Shiksha\CS\5\Lectures\" />
+    <Folder Include="Shiksha\CS\5\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\CS\5\Tutorials\" />
+    <Folder Include="Shiksha\CS\6\Assignments\" />
+    <Folder Include="Shiksha\CS\6\Lectures\" />
+    <Folder Include="Shiksha\CS\6\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\CS\6\Tutorials\" />
+    <Folder Include="Shiksha\CS\8\Assignments\" />
+    <Folder Include="Shiksha\CS\8\Lectures\" />
+    <Folder Include="Shiksha\CS\8\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\CS\8\Tutorials\" />
+    <Folder Include="Shiksha\EC\1\Assignments\" />
+    <Folder Include="Shiksha\EC\1\Lectures\" />
+    <Folder Include="Shiksha\EC\1\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\1\Tutorials\" />
+    <Folder Include="Shiksha\EC\2\Lectures\" />
+    <Folder Include="Shiksha\EC\2\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\2\Tutorials\" />
+    <Folder Include="Shiksha\EC\3\Assignments\" />
+    <Folder Include="Shiksha\EC\3\Lectures\" />
+    <Folder Include="Shiksha\EC\3\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\3\Tutorials\" />
+    <Folder Include="Shiksha\EC\4\Assignments\" />
+    <Folder Include="Shiksha\EC\4\Lectures\" />
+    <Folder Include="Shiksha\EC\4\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\4\Tutorials\" />
+    <Folder Include="Shiksha\EC\5\Assignments\" />
+    <Folder Include="Shiksha\EC\5\Lectures\" />
+    <Folder Include="Shiksha\EC\5\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\5\Tutorials\" />
+    <Folder Include="Shiksha\EC\6\Assignments\" />
+    <Folder Include="Shiksha\EC\6\Lectures\" />
+    <Folder Include="Shiksha\EC\6\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\6\Tutorials\" />
+    <Folder Include="Shiksha\EC\7\Assignments\" />
+    <Folder Include="Shiksha\EC\7\Lectures\" />
+    <Folder Include="Shiksha\EC\7\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\7\Tutorials\" />
+    <Folder Include="Shiksha\EC\8\Assignments\" />
+    <Folder Include="Shiksha\EC\8\Lectures\" />
+    <Folder Include="Shiksha\EC\8\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\EC\8\Tutorials\" />
+    <Folder Include="Shiksha\IT\1\Assignments\" />
+    <Folder Include="Shiksha\IT\1\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\1\Tutorials\" />
+    <Folder Include="Shiksha\IT\2\Assignments\" />
+    <Folder Include="Shiksha\IT\2\Lectures\" />
+    <Folder Include="Shiksha\IT\2\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\2\Tutorials\" />
+    <Folder Include="Shiksha\IT\3\Assignments\" />
+    <Folder Include="Shiksha\IT\3\Lectures\" />
+    <Folder Include="Shiksha\IT\3\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\3\Tutorials\" />
+    <Folder Include="Shiksha\IT\4\Assignments\" />
+    <Folder Include="Shiksha\IT\4\Lectures\" />
+    <Folder Include="Shiksha\IT\4\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\4\Tutorials\" />
+    <Folder Include="Shiksha\IT\5\Assignments\" />
+    <Folder Include="Shiksha\IT\5\Lectures\" />
+    <Folder Include="Shiksha\IT\5\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\5\Tutorials\" />
+    <Folder Include="Shiksha\IT\6\Assignments\" />
+    <Folder Include="Shiksha\IT\6\Lectures\" />
+    <Folder Include="Shiksha\IT\6\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\6\Tutorials\" />
+    <Folder Include="Shiksha\IT\7\Assignments\" />
+    <Folder Include="Shiksha\IT\7\Lectures\" />
+    <Folder Include="Shiksha\IT\7\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\7\Tutorials\" />
+    <Folder Include="Shiksha\IT\8\Assignments\" />
+    <Folder Include="Shiksha\IT\8\Lectures\" />
+    <Folder Include="Shiksha\IT\8\PreviousYearQuestion\" />
+    <Folder Include="Shiksha\IT\8\Tutorials\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57362</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57362/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
