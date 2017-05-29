@@ -114,7 +114,7 @@ namespace Interactive_Learning_Portal
             client.Credentials = new System.Net.NetworkCredential()
             {
                 UserName = "saxena.ankur47@gmail.com",
-                Password = "uni@123que"
+                Password = "saxena.ankur47"
             };
             client.EnableSsl = true;
             client.Send(mail);
@@ -237,11 +237,22 @@ namespace Interactive_Learning_Portal
             SqlDataAdapter da=new SqlDataAdapter(cmd);
             DataSet d=new DataSet();
             da.Fill(d);
-            sendmail(d.Tables[0].Rows[0][1].ToString(), d.Tables[0].Rows[0][10].ToString(), Result);
             Label4.Visible = true;
-            Label4.Text = "We have send the report to your register mail id";
-            Label4.ForeColor = System.Drawing.Color.Green;
-            Button5.Enabled = false;
+            try
+            {
+                sendmail(d.Tables[0].Rows[0][1].ToString(), d.Tables[0].Rows[0][10].ToString(), Result);
+                Label4.Text = "We have send the report to your register mail id";
+                Label4.ForeColor = System.Drawing.Color.Green;
+            }
+            catch(SmtpException ex)
+            {
+                Label4.Text= "Network conditions prevent us from sending the report";
+                Label4.ForeColor=System.Drawing.Color.Red;
+            }
+            finally
+            {
+                Button5.Enabled = false;
+            }
         }
     }
 }

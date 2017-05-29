@@ -57,11 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStudent.aspx.cs">
+    <Compile Include="code\RandomUtil.cs" />
+    <Compile Include="Shiksha\AddStudent.aspx.cs">
       <DependentUpon>AddStudent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddStudent.aspx.designer.cs">
+    <Compile Include="Shiksha\AddStudent.aspx.designer.cs">
       <DependentUpon>AddStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddTeacher.aspx.cs">
@@ -276,7 +277,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddStudent.aspx" />
+    <Content Include="Shiksha\AddStudent.aspx" />
     <Content Include="AddTeacher.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="AdminLogin.aspx" />

@@ -23,6 +23,8 @@ namespace Interactive_Learning_Portal
         protected void Button1_Click(object sender, EventArgs e)
         {
             validate v = new validate();
+            
+            SmtpException ev=null;
             try
             {
                 SqlConnection cn = new SqlConnection();
@@ -95,26 +97,38 @@ namespace Interactive_Learning_Portal
                     SqlParameter p12 = new SqlParameter("semester", semester.Value);
                     cmd.Parameters.Add(p12);
                 }
-                cmd.Parameters.AddWithValue("password", rollno.Value);
-
+                string pas=RandomUtil.GetRandomString();
+                cmd.Parameters.AddWithValue("password", pas);
                 em.send_maill(ret.name(rollno.Value), ret.email(rollno.Value), 1, rollno.Value);
                 int i=cmd.ExecuteNonQuery();
                 cn.Close();
                 alert1.Visible = true;
-                sendmail(name.Value, rollno.Value, email.Value);
-                Label1.Text = "Students details are successfully saved, and we have sent your login credentials on the registered email address";
-                name.Value = "";
-                fname.Value = "";
-                mname.Value = "";
-                dob.Value = "";
-                course.Value = "";
+                try
+                {
+                    sendmail(name.Value,rollno.Value, pas, email.Value);
+                }
+                catch(SmtpException ex)
+                {
+                    ev = ex;
+                    Label2.Text = "Network conditions prevent us to send an email, although you have been registered.";
+                    alert.Visible = true;
+                }
+                finally
+                {
+                    Label1.Text = "Students details are successfully saved"+(ev==null?", and we have sent your login credentials on the registered email address":".");
+                    name.Value = "";
+                    fname.Value = "";
+                    mname.Value = "";
+                    dob.Value = "";
+                    course.Value = "";
 
-                batch.Value = "";
-                address.Text = "";
-                rollno.Value = "";
-                pno.Value = "";
-                email.Value = "";
-                semester.Value = "";
+                    batch.Value = "";
+                    address.Text = "";
+                    rollno.Value = "";
+                    pno.Value = "";
+                    email.Value = "";
+                    semester.Value = "";
+                }
             }
             catch (Exception e1)
             {
@@ -123,16 +137,16 @@ namespace Interactive_Learning_Portal
             }
         }
 
-        protected void sendmail(string username, string password, string email)
+        protected void sendmail(string username,string roll, string password, string email)
         {
             MailMessage mail = new MailMessage("saxena.ankur47@gmail.com", email);
             mail.Subject = "Welcome to Shiksha!";
-            mail.Body = "Hi " + username + ",\nGreetings!\nThank you for being a part of Shiksha(Interactive Learning Portal).\nWe have created your profile, below are the credentials to login:\nUsername: " + password + "\nPassword: " + password + "\nYou can change the password once you login\nRegards,\nAdmin";
+            mail.Body = "Hi " + username + ",\nGreetings!\nThank you for being a part of Shiksha(Interactive Learning Portal).\nWe have created your profile, below are the credentials to login:\nUsername: " + roll + "\nPassword: " + password + "\nYou can change the password once you login\nRegards,\nAdmin";
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.Credentials = new System.Net.NetworkCredential()
             {
                 UserName = "saxena.ankur47@gmail.com",
-                Password = "uni@123que"
+                Password = "saxena.ankur47"
             };
             client.EnableSsl = true;
             client.Send(mail);

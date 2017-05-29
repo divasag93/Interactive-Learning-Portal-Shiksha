@@ -22,11 +22,12 @@ namespace Interactive_Learning_Portal
         protected void Button1_Click(object sender, EventArgs e)
         {
             validate v = new validate();
+            SmtpException exc = null;
             try
             {
                 SqlConnection cn = new SqlConnection();
                 cn.ConnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["cn"].ToString();
-                cn.Open();
+                
                 string str = "insert into AddTeacher(TeacherId,TName,TPno,Department,Password,TEmail) values(@tid,@tname,@tpno,@department,@password,@email)";
                 SqlCommand cmd = new SqlCommand(str, cn);
 
@@ -73,18 +74,31 @@ namespace Interactive_Learning_Portal
                     SqlParameter p3 = new SqlParameter("tpno", tpno.Value);
                     cmd.Parameters.Add(p3);
                 }
-                SqlParameter p5 = new SqlParameter("password", department.Value + tid.Value);
+                string pas = RandomUtil.GetRandomString();
+                SqlParameter p5 = new SqlParameter("password",pas);
                 cmd.Parameters.Add(p5);
-                em.send_maill(ret.tname(department.Value + tid.Value), ret.temail(department.Value + tid.Value), 1, department.Value + tid.Value);
+                cn.Open();
                 int i=cmd.ExecuteNonQuery();
                 cn.Close();
-                sendmail(tname.Value,department.Value+tid.Value,email.Value);
-                alert1.Visible = true;
-                Label1.Text = "Teacher details are successfully saved and we have sent your login credentials to your Email Address";
-                tname.Value = "";
-                tid.Value = "";
-                department.Value = "";
-                tpno.Value = "";
+                try
+                {
+                    sendmail(tname.Value,department.Value+tid.Value, pas, email.Value);
+                }
+                catch (SmtpException ex)
+                {
+                    Label2.Text = "Network conditions prevent us from sending an email, although you have been registered.";
+                    alert.Visible = true;
+                    exc = ex;
+                }
+                finally
+                {
+                    alert1.Visible = true;
+                    Label1.Text = "Teacher details are successfully saved"+((exc==null)?" and we have sent your login credentials to your Email Address.":    ".");
+                    tname.Value = "";
+                    tid.Value = "";
+                    department.Value = "";
+                    tpno.Value = "";
+                }
             }
             catch (Exception e1)
             {
@@ -92,16 +106,16 @@ namespace Interactive_Learning_Portal
             }
         }
 
-        protected void sendmail(string username,string password,string email)
+        protected void sendmail(string username,string id,string password,string email)
         {
             MailMessage mail = new MailMessage("saxena.ankur47@gmail.com", email);
             mail.Subject = "Welcome to Shiksha!";
-            mail.Body = "Hi " + username + ",\nGreetings!\nThank you for being a part of Shiksha(Interactive Learning Portal) account.\nWe have created your profile, below are the details to login:\nUsername: "+password+"\nPassword: " + password + "\nYou can change the password once you login\nRegards,\nAdmin";
+            mail.Body = "Hi " + username + ",\nGreetings!\nThank you for being a part of Shiksha(Interactive Learning Portal) account.\nWe have created your profile, below are the details to login:\nUsername: "+id+"\nPassword: " + password + "\nYou can change the password once you login\nRegards,\nAdmin";
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.Credentials = new System.Net.NetworkCredential()
             {
                 UserName = "saxena.ankur47@gmail.com",
-                Password = "uni@123que"
+                Password = "saxena.ankur47"
             };
             client.EnableSsl = true;
             client.Send(mail);

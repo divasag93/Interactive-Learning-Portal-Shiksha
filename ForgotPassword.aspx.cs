@@ -58,7 +58,7 @@ namespace Interactive_Learning_Portal
                         client.Credentials = new System.Net.NetworkCredential()
                         {
                             UserName = "saxena.ankur47@gmail.com",
-                            Password = "uni@123que"
+                            Password = "saxena.ankur47"
                         };
                         client.EnableSsl = true;
                         client.Send(mail);
